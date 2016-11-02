@@ -1,0 +1,87 @@
+body{
+    font-family: arial;
+    font-size: 14px;
+    min-width:320px;
+    background: url(../img/fon.jpg);
+}
+p{
+    margin: 0;
+}
+.line > p{
+    color:#000033;
+    text-align: center;
+    margin:0;
+    padding: 3px 0;
+    
+}
+.navbar-inverse{
+    background-color: #000033;
+    border-radius: 0;
+    margin: 0 0 3px 0;
+}
+.navbar-brand{
+    padding-top: 8px;
+}
+.navbar-brand > img{
+    max-height: 33px;
+}
+.navbar-inverse .navbar-toggle {
+    background-color: #000033;
+    border: 2px solid #fff;
+}
+.navbar-inverse .navbar-toggle:focus, .navbar-inverse .navbar-toggle:hover{
+    background-color: #cccccc; 
+}
+.navbar-inverse .navbar-nav > li > a:hover {
+    background-color: #fff;
+    color: #000033;
+}
+.navbar-inverse .navbar-nav > .open > a, .navbar-inverse .navbar-nav > .open > a:focus, .navbar-inverse .navbar-nav > .open > a:hover {
+    background-color: #fff;
+    color: #000033;
+}
+
+.link-calculator, .calculator{
+    display: none;
+}
+.link-calculator{
+    background-color: #000033;
+    padding: 10px 0;
+    color:#fff;
+    text-align: center;
+    cursor: pointer;
+    font-weight: 700;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+.calculator{
+    
+}
+
+
+
+@media only screen and (max-width:768px){
+    .line{
+        background-color: #cccccc;
+    }
+    body{
+        background-image: none;
+    }
+    .link-calculator{
+        display: block;
+    }
+}
+
+@media only screen and (max-width:500px){
+    .line{
+        font-size:10px;
+    }
+}
+
+
+
+
