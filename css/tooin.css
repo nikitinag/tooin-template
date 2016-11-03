@@ -2,28 +2,34 @@ body{
     font-family: arial;
     font-size: 14px;
     min-width:320px;
+    background-color: #fff;
     background: url(../img/fon.jpg);
 }
 p{
     margin: 0;
 }
+h4{
+    text-align: center;
+}
+.line{
+    background: url(../img/fon.jpg);
+}
 .line > p{
     color:#000033;
     text-align: center;
     margin:0;
-    padding: 3px 0;
-    
+    padding: 3px 0; 
 }
 .navbar-inverse{
     background-color: #000033;
     border-radius: 0;
     margin: 0 0 3px 0;
 }
-.navbar-brand{
-    padding-top: 8px;
-}
 .navbar-brand > img{
-    max-height: 33px;
+    max-height: 30px;
+}
+.navbar-brand{
+    padding-top: 10px;
 }
 .navbar-inverse .navbar-toggle {
     background-color: #000033;
@@ -31,6 +37,9 @@ p{
 }
 .navbar-inverse .navbar-toggle:focus, .navbar-inverse .navbar-toggle:hover{
     background-color: #cccccc; 
+}
+.navbar-inverse .navbar-nav > li > a{
+    font-weight: bold;
 }
 .navbar-inverse .navbar-nav > li > a:hover {
     background-color: #fff;
@@ -40,11 +49,8 @@ p{
     background-color: #fff;
     color: #000033;
 }
-
-.link-calculator, .calculator{
-    display: none;
-}
 .link-calculator{
+    display: none;
     background-color: #000033;
     padding: 10px 0;
     color:#fff;
@@ -58,14 +64,55 @@ p{
     -ms-user-select: none;
     user-select: none;
 }
-.calculator{
-    
+
+.main {
+    margin-top: 85px; 
+}
+/*calculator*/
+.calculator-sm{
+    color: #000033;
+}
+.list{
+    padding: 0 15px;
+}
+.list > li{
+    list-style: outside none none;
+    font-size: 11px;
+    text-align: center;
+    border-bottom: 1px solid #000033;
+    cursor: pointer;
+    padding-top: 10px;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+.list > li:hover{
+    border-bottom: 1px solid #3366ff;
+    color: #3366ff;
+}
+.calculator-result{
+    text-align: center;
+}
+.calculator-good{
+    color: #3366ff;
+}
+.calculator-bad{
+    color: red;
 }
 
+/*---------main----------*/
+
+.main-content{
+    padding-top: 10px;
+}
 
 
 @media only screen and (max-width:768px){
     .line{
+        background-image: none;
         background-color: #cccccc;
     }
     body{
@@ -74,11 +121,23 @@ p{
     .link-calculator{
         display: block;
     }
+    .main {
+    margin-top: 125px; 
+    }
+    .main > div{
+        margin: 0;
+    }
 }
 
 @media only screen and (max-width:500px){
     .line{
         font-size:10px;
+    }
+}
+
+@media only screen and (max-width:350px){
+    .line{
+        font-size:9px;
     }
 }
 
