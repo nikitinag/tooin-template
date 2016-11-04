@@ -113,6 +113,30 @@ h4{
     padding-top: 10px;
 }
 
+/*---footer---*/
+
+footer{
+    margin-top: 15px;
+    background-color: #000033;
+    font-size: 11px;
+    color: #cccccc;
+}
+footer p{
+    margin: 15px 0;
+}
+.contacts, .copy{
+    padding-left: 130px;
+    padding-bottom: 15px;
+}
+.contacts > dl{
+    margin: 5px 0;
+}
+.develop{
+    margin-top: 15px;
+    margin-bottom: 40px;
+}
+
+/*-----@media------*/
 
 @media only screen and (max-width:768px){
     .line{
@@ -125,6 +149,9 @@ h4{
     .link-calculator{
         display: block;
     }
+    .section-calculator{
+        border-bottom: 2px solid #fff;
+    }
     .main {
     margin-top: 125px; 
     }
@@ -134,6 +161,9 @@ h4{
     .section-calculator{
     background-color: #fff;
     }
+    .copy{
+    border-top: 1px solid #cccccc;
+}
 }
 
 @media only screen and (max-width:500px){
