@@ -75,13 +75,13 @@ h4{
 
 .calculator-sm{
     color: #000033;
+    font-size: 11px;
 }
 .list{
     padding: 0 15px;
 }
 .list > li{
     list-style: outside none none;
-    font-size: 11px;
     text-align: center;
     border-bottom: 1px solid #000033;
     cursor: pointer;
@@ -96,6 +96,9 @@ h4{
 .list > li:hover{
     border-bottom: 1px solid #3366ff;
     color: #3366ff;
+}
+.calculator-form{
+    
 }
 .calculator-result{
     text-align: center;
@@ -140,7 +143,7 @@ footer p{
 
 @media only screen and (min-width:1200px){
     
-    .list > li{
+    .calculator-sm{
     font-size: 14px;
     }
 }
