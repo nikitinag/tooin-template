@@ -138,6 +138,14 @@ footer p{
 
 /*-----@media------*/
 
+@media only screen and (min-width:1200px){
+    
+    .list > li{
+    font-size: 14px;
+    }
+}
+
+
 @media only screen and (max-width:768px){
     .line{
         background-image: none;
