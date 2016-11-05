@@ -97,8 +97,34 @@ h4{
     border-bottom: 1px solid #3366ff;
     color: #3366ff;
 }
+.list-active{
+    border-bottom: 1px solid #3366ff;
+    color: #3366ff;
+}
 .calculator-form{
-    
+    margin: 20px 13px;    
+}
+.form-control, .input-group-addon, .btn{
+    font-size: 11px;
+    border-radius: 0;
+    border: 1px solid #000033;
+}
+.form-control:focus{
+    border-color: #3366ff;
+}
+.input-group{
+    margin: 5px 0;
+}
+.input-group-addon{
+    color: #000033;
+}
+.calculator-form > button{
+    margin-top: 10px;
+    border-color: #000033!important;
+    color: #000033!important;
+}
+.calculator-form > button:hover{
+    background-color: #6699ff!important;
 }
 .calculator-result{
     text-align: center;

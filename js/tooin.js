@@ -2,16 +2,16 @@ $(document).ready(function(){
 
 function id(element){return document.getElementById(element);};
   
-$('#list li').click(function(){
+$('#list>li').mouseup(function(){
     var type=this.value;
     myForm="";
-    var Button="<button id='work'>Рассчитать</button>";
+    var Button="<button type='button' id='work' class='btn btn-default btn active'>Расчитать</button>";
     switch(type){
-        case 1:myForm="<p>Диаметр в мм.</p><p><input type='text' id='cluch1'/></p>";break;
-        case 2:myForm="<p>Номер шестигранника под ключ</p><p><input type='text' id='cluch1'/></p>";break;
-        case 3:myForm="<p>Толщина листа в мм.</p><p><input type='text' id='cluch1'/></p><p>Длинна в метрах.</p><p><input type='text' id='cluch2'/></p><p>Ширина в метрах.</p><p><input type='text' id='cluch3'/></p>";break;
-        case 4:myForm="<p>Внешний диаметр в мм.</p><p><input type='text' id='cluch1'/></p><p>Толщина стенки в мм.</p><p><input type='text' id='cluch2'/></p>";break;
-        case 5:myForm="<p>Сторона А в мм.</p><p><input type='text' id='cluch1'/></p><p>Сторона Б в мм.</p><p><input type='text' id='cluch2'/></p><p>Толщина стенки в мм.</p><p><input type='text' id='cluch3'/></p>";break;
+        case 1:myForm='<div class="input-group"><input type="text"  id="cluch1" class="form-control" placeholder="Введите диаметр" aria-describedby="basic-addon2"><span class="input-group-addon" id="basic-addon2">миллиметр</span></div>';break;
+        case 2:myForm='<div class="input-group"><input type="text"  id="cluch1" class="form-control" placeholder="Номер шестигранника под ключ" aria-describedby="basic-addon2"><span class="input-group-addon" id="basic-addon2">номер</span></div>';break;
+        case 3:myForm='<div class="input-group"><input type="text"  id="cluch1" class="form-control" placeholder="Толщина листа" aria-describedby="basic-addon2"><span class="input-group-addon" id="basic-addon2">миллиметр</span></div><div class="input-group"><input type="text"  id="cluch2" class="form-control" placeholder="Длинна листа" aria-describedby="basic-addon2"><span class="input-group-addon" id="basic-addon2">миллиметр</span></div><div class="input-group"><input type="text"  id="cluch3" class="form-control" placeholder="Ширина листа" aria-describedby="basic-addon2"><span class="input-group-addon" id="basic-addon2">миллиметр</span></div>';break;
+        case 4:myForm='<div class="input-group"><input type="text"  id="cluch1" class="form-control" placeholder="Внешний диаметр" aria-describedby="basic-addon2"><span class="input-group-addon" id="basic-addon2">миллиметр</span></div><div class="input-group"><input type="text"  id="cluch2" class="form-control" placeholder="Толщина стенки" aria-describedby="basic-addon2"><span class="input-group-addon" id="basic-addon2">миллиметр</span></div>';break;
+        case 5:myForm='<div class="input-group"><input type="text"  id="cluch1" class="form-control" placeholder="Сторона А" aria-describedby="basic-addon2"><span class="input-group-addon" id="basic-addon2">миллиметр</span></div><div class="input-group"><input type="text"  id="cluch2" class="form-control" placeholder="Сторона Б" aria-describedby="basic-addon2"><span class="input-group-addon" id="basic-addon2">миллиметр</span></div><div class="input-group"><input type="text"  id="cluch3" class="form-control" placeholder="Толщина стенки" aria-describedby="basic-addon2"><span class="input-group-addon" id="basic-addon2">миллиметр</span></div>';break;
         default:"";break;
     }
     $("#calculator-form").html(myForm+Button);
