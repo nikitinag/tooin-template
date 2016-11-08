@@ -94,12 +94,11 @@ h4{
     user-select: none;
 }
 .list > li:hover{
-    border-bottom: 1px solid #3366ff;
-    color: #3366ff;
+    font-weight: bold;
 }
-.list-active{
-    border-bottom: 1px solid #3366ff;
+.activeelement{
     color: #3366ff;
+    font-weight: bold;
 }
 .calculator-form{
     margin: 20px 13px;    
@@ -128,6 +127,9 @@ h4{
 }
 .calculator-result{
     text-align: center;
+    padding-bottom: 10px;
+    font-size: 16px;
+    font-weight: bold;
 }
 .calculator-good{
     color: #3366ff;
@@ -152,6 +154,7 @@ footer{
 }
 footer p{
     margin: 15px 0;
+    font-weight: bold;
 }
 .contacts, .copy{
     padding-left: 130px;
