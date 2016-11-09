@@ -1,13 +1,17 @@
 $(document).ready(function(){
 
+//Определение IE
+var buttonBr='submit';
+if(navigator.userAgent.search(/MSIE/) > 0) buttonBr='button';
+
 function id(element){return document.getElementById(element);};
 var type=0;
 //Выбор типа  
 $('#list li').mouseup(function(){
     $('#calculator-result').html('');
     type=this.value;
-    myForm="";
-    var Button="<button type='submit' id='work' class='btn btn-default btn active'>Расчитать</button>";
+    var myForm="";
+    var Button="<button type='"+buttonBr+"' id='work' class='btn btn-default btn active'>Расчитать</button>";
     switch(type){
         case 1:myForm='<div class="input-group"><input type="text"  id="cluch1" class="form-control" placeholder="Введите диаметр" aria-describedby="basic-addon2"><span class="input-group-addon" id="basic-addon2">миллиметр</span></div>';break;
         case 2:myForm='<div class="input-group"><input type="text"  id="cluch1" class="form-control" placeholder="Номер шестигранника под ключ" aria-describedby="basic-addon2"><span class="input-group-addon" id="basic-addon2">номер</span></div>';break;
@@ -19,7 +23,6 @@ $('#list li').mouseup(function(){
     $('#list li').removeClass('activeelement');
     $(this).addClass('activeelement');
     $("#calculator-form").html('<form action="#" method="get">'+myForm+Button+'</form>');
-    $('#cluch1').focus();
     
     //Расчёт
     $('#work').click(function(){
@@ -31,7 +34,8 @@ $('#list li').mouseup(function(){
         case 2:number1=parseData(id('cluch1').value);result[0]='Вес 1 метра ';result[1]=number1*number1*density*0.87/1000;break;
         case 3:number1=parseData(id('cluch1').value);number2=parseData(id('cluch2').value);number3=parseData(id('cluch3').value);result[0]='Вес 1 листа ';result[1]=number1*number2*number3*density;break;
         case 4:number1=parseData(id('cluch1').value);number2=parseData(id('cluch2').value);result[0]='Вес 1 метра ';result[1]=(number1-number2)*number2*pi*density/1000;break;
-        case 5:number1=parseData(id('cluch1').value);number2=parseData(id('cluch2').value);number3=parseData(id('cluch3').value);result[0]='Вес 1 метра ';result[1]=(number1+number2-2*number3)*number3*0.0157;break;
+        case 5:number1=parseData(id('cluch1').value);number2=parseData(id('cluch2').value);number3=parseData(id('cluch3').value);
+        if(number3<number1&&number3<number2){result[0]='Вес 1 метра ';result[1]=(number1+number2-2*number3)*number3*0.0157;}else{result[1]=0;}break;
         default:result[1]=0;break;
     }
     if(isNaN(result[1])||result[1]<=0){
@@ -55,7 +59,6 @@ function parseData(i){
 $('#link-calculator').click(function(){
    $('#calculator').toggleClass('hidden-xs');
 });
-
 
 
     
