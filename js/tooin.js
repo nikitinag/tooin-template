@@ -53,7 +53,7 @@ function parseData(i){
  
 //Показ для мобильных устройств
 $('#link-calculator').click(function(){
-   $('#calculator-sm').toggleClass('hidden-xs');
+   $('#calculator').toggleClass('hidden-xs');
 });
 
 
