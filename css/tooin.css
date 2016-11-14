@@ -137,6 +137,9 @@ h4{
 .calculator-bad{
     color: red;
 }
+.calculator-form-IE p{
+    text-align: center;  
+}
 
 /*---------main----------*/
 
