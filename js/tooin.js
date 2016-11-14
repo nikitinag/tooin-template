@@ -23,30 +23,30 @@ $('#list li').mouseup(function(){
     $('#list li').removeClass('activeelement');
     $(this).addClass('activeelement');
     $("#calculator-form").html('<form action="#" method="get">'+myForm+Button+'</form>');
+});
     
-    //Расчёт
-    $('#work').click(function(){
-    var result=new Array;
-    var density=7.85;var pi=Math.PI;
-    var number1=0;var number2=0;var number3=0;
-    switch(type){
-        case 1:number1=parseData(id('cluch1').value);result[0]='Вес 1 метра ';result[1]=number1*number1*density*pi/4000;break;
-        case 2:number1=parseData(id('cluch1').value);result[0]='Вес 1 метра ';result[1]=number1*number1*density*0.87/1000;break;
-        case 3:number1=parseData(id('cluch1').value);number2=parseData(id('cluch2').value);number3=parseData(id('cluch3').value);result[0]='Вес 1 листа ';result[1]=number1*number2*number3*density;break;
-        case 4:number1=parseData(id('cluch1').value);number2=parseData(id('cluch2').value);result[0]='Вес 1 метра ';result[1]=(number1-number2)*number2*pi*density/1000;break;
-        case 5:number1=parseData(id('cluch1').value);number2=parseData(id('cluch2').value);number3=parseData(id('cluch3').value);
-        if(number3<number1&&number3<number2){result[0]='Вес 1 метра ';result[1]=(number1+number2-2*number3)*number3*0.0157;}else{result[1]=0;}break;
-        default:result[1]=0;break;
+//Расчёт
+$("#calculator-form").on("click",function(e){
+    e.preventDefault();
+    if(e.target.id=='work'){
+        var result=new Array;
+        var density=7.85;var pi=Math.PI;
+        var number1=0;var number2=0;var number3=0;
+        switch(type){
+            case 1:number1=parseData(id('cluch1').value);result[0]='Вес 1 метра ';result[1]=number1*number1*density*pi/4000;break;
+            case 2:number1=parseData(id('cluch1').value);result[0]='Вес 1 метра ';result[1]=number1*number1*density*0.87/1000;break;
+            case 3:number1=parseData(id('cluch1').value);number2=parseData(id('cluch2').value);number3=parseData(id('cluch3').value);result[0]='Вес 1 листа ';result[1]=number1*number2*number3*density;break;
+            case 4:number1=parseData(id('cluch1').value);number2=parseData(id('cluch2').value);result[0]='Вес 1 метра ';result[1]=(number1-number2)*number2*pi*density/1000;break;
+            case 5:number1=parseData(id('cluch1').value);number2=parseData(id('cluch2').value);number3=parseData(id('cluch3').value);if(number3<number1&&number3<number2){result[0]='Вес 1 метра ';result[1]=(number1+number2-2*number3)*number3*0.0157;}else{result[1]=0;}break;
+            default:result[1]=0;break;
+        }
+        if(isNaN(result[1])||result[1]<=0){
+            $('#calculator-result').html("<span class='calculator-bad'>Неверно введены данные.</span>");
+        }else{
+            $('#calculator-result').html("<span class='calculator-good'>"+result[0]+Math.round(result[1]*40)/40+" кг.</span>");
+        }
+        $('#cluch1').focus();
     }
-    if(isNaN(result[1])||result[1]<=0){
-        $('#calculator-result').html("<span class='calculator-bad'>Неверно введены данные.</span>");
-    }else{
-        $('#calculator-result').html("<span class='calculator-good'>"+result[0]+Math.round(result[1]*40)/40+" кг.</span>");
-    }
-    $('#cluch1').focus();
-    });
-
-
 });
 
 //Парсер
