@@ -2,7 +2,7 @@ $(document).ready(function(){
 
 //Определение IE
 var controlIE=0;
-if(navigator.userAgent.search(/MSIE/) > 0) controlIE=1;
+if(navigator.userAgent.search(/MSIE 8./) > 0) controlIE=1;
 
 function id(element){return document.getElementById(element);};
 var type=0;
